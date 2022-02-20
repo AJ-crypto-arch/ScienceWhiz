@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <title>Ideal Gas Equation</title>
+</head>
+<body>
+    <h1>Ideal Gas Equation</h1>
+    <h2>What are Ideal Gasses?</h2>
+    <p>Ideal gasses are real gasses that follow Kinetic Molecular Theory (KMT)</p>
+    <ol>
+        <li>Gases consist of small particles, spaced far apart</li>
+        <li>Collisions between are elastic – meaning no energy is lost during these collisions </li>
+        <li>Gas particles are in continuous, straight line motion</li>
+        <li>No attraction or repulsion between particles</li>
+        <li>Kinetic energy is directly related to temperature</li>
+    </ol>
+    <form onsubmit="return false">
+        <label for=""> For pressure, assume atm (1 atm = 760 mmHg). For volume, assume liters. For temperature, assume Kelvins (add 273 to Celcius). <br> Type in the word "solve" for the variable you want to solve for. <br></label>
+        <label for=""><br>Enter Pressure:<br></label>
+        <input type="text" name="P" id="P">
+        <label for=""><br>Enter Volume:<br></label>
+        <input type="text" name="V" id="V">
+        <label for=""><br>Enter Number of Moles:<br></label>
+        <input type="text" name="n" id="n">
+        <label for=""><br>Enter Temperature:<br></label>
+        <input type="text" name="T"id = "T">
+        <input type="submit" value="Calculate" onclick = "calc();">
+        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+    </form>
+    <p id = "output"></p>
+<script>
+    function calc(){
+        let p = document.getElementById("P").value;
+        let v = document.getElementById("V").value;
+        let n = document.getElementById("n").value;
+        let r = 0.0821;
+        let t = document.getElementById("T").value;
+        let show = "";
+        let output = document.getElementById("output");
+
+        if (p == "solve"){
+            n = parseFloat(n);
+            v = parseFloat(v);
+            t = parseFloat(t);
+            p = (n * r * t)/v;
+            show = "P = (n*R*T)/V <br> P = ("+n+"*"+r+"*"+t+")/"+v+"<br>P = "+p+"atm";
+        }
+        if (v == "solve"){
+            p = parseFloat(p);
+            n = parseFloat(n);
+            t = parseFloat(t);
+            v = (n * r * t)/p;
+            show = "V = (n*R*T)/P <br> V = ("+n+"*"+r+"*"+t+")/"+p+"<br>V = "+v+"L";
+        }
+        if (n == "solve"){
+            p = parseFloat(p);
+            v = parseFloat(v);
+            t = parseFloat(t);
+            n = (p * v)/(r * t);
+            show = "n = (P * V)/(R * T) <br> n = ("+p+" * " + v + ")/("+ r +" * "+ t + ") <br> n = " + n + "mol";
+        }
+        if (t == "solve"){
+            p = parseFloat(p);
+            v = parseFloat(v);
+            n = parseFloat(n);
+            t = (p * v)/(n * r);
+            show = "T = (P * V)/(n * R) <br> n = ("+p+" * " + v + ")/("+ n +" * "+ r + ") <br> T = " + t + "K";
+        }
+        output.innerHTML = show;
+    }
+</script>
+</body>
+</html>

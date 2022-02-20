@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style='text-align: center;'>Forces Calculator!</h1>
+    <p style='text-align: center;'>Please enter values in usual SI units(kg, newtons, meters, seconds, etc.) Please leave only one unknown when solving for the variable.</p>
+    
+    <h1>Force</h1>
+    <form onsubmit="return false" style='text-align: center'>
+        <label for="mass">Mass</label>
+        <input type="text" id ="mass">   
+
+        <label for="acc">Acceleration</label>
+        <input type="text" id ="acc">  
+
+        <label for="newtons">Force(Magnitude)</label>
+        <input type="text" id="newtons">
+    </form>
+    <button style='text-align: center' onclick="fma();">Click to calculate force</button>
+    <p id="output"></p>
+    
+    <h1>Circular Motion</h1>
+    <form onsubmit="return false" style='text-align: center'>
+        <label for="cof">Coeffecient of Friction</label>
+        <input type="text" id ="cof">
+        
+        <label for="mass">Coeffecient of Friction</label>
+        <input type="text" id ="mass">  
+        
+        <label for="nForce">Friction Force(Magnitude)</label>
+        <input type="text" id="nforce">
+    </form>
+    <button style='text-align: center' onclick="centripetal();">Click to calculate force</button>
+    <p id="output2"></p>
+    
+    <h1>Friction</h1>
+    <form onsubmit="return false" style='text-align: center'>
+        <label for="mass">Mass</label>
+        <input type="text" id ="mass">
+        
+        <label for="velo">Velocity</label>
+        <input type="text" id="vel">
+
+        <label for="rad">Radius</label>
+        <input type="text" id="rad">
+
+        <label for="newtons">Centripital Force(Magnitude)</label>
+        <input type="text" id="newtons">
+    </form>
+    <button style='text-align: center' onclick="friction();">Click to calculate force</button>
+    <p id="output3"></p>
+
+    <script type="text/javascript"> 
+        function fma(){
+            let mass = document.getElementById("mass").value;
+            let acceleration = document.getElementById("acc").value;
+            let force = document.getElementById("newtons").value;
+            let work = "";
+
+            if (mass == "solve"){
+                acceleration = parseFloat(acceleration);
+                force = parseFloat(force);
+                mass = force/acceleration;
+                work = "We know that F<sub>net</sub> = ma. Rearranging this equation to isolate mass and plugging in values, we can conclude that mass is " + mass + ".";
+                 
+            }
+
+            if (acceleration == "solve"){
+                mass = parseFloat(mass);
+                force = parseFloat(force);
+                acceleration = force/mass;
+                work = "We know that F<sub>net</sub> = ma. When we rearrange this equation to find acceleration and plugging in values, we can simplify to say that acceleration is " + acceleration + ".";
+                output.innerHTML = "The acceleration is " + acceleration + ". Work: " + work;
+            }
+
+            if (force == "solve"){
+                acceleration = parseFloat(acceleration);
+                mass = parseFloat(mass);
+                force = mass*acceleration;
+                work = "We know that F<sub>net</sub> = ma. When plugging in the values, we can find that force is " + force + ".";
+                output.innerHTML = "The force is " + force + "N. Work: " + work;
+            }
+            
+
+            
+        }
+
+        function centripetal(){
+            let mass = document.getElementById("mass").value;
+            let velocity = document.getElementById("vel").value;
+            let radius = document.getElementById("rad").value;
+            let force = document.getElementById("newtons").value;
+            let work = "";
+
+            if (mass == "solve"){
+                velocity = paraseFloat(velocity);
+                radius = parseFloat(velocity);
+                force = parseFloat(force);
+                mass = (force*radius)/Math.pow(v, 2);
+                work = "We know that (mv<sup>2</sup>)/r = F<sub>c</sub>, which can be rearranged to isolate <em>m</em>. Doing this, we get m = F<sub>c</sub>(r)/(v<sup>2</sup>), in which we can substitute values to get our final value as " + mass + ".";
+                output2.innerHTML = "The mass is " + mass + ". Work: " + work;
+            }
+
+            if (velocity == "solve"){
+                mass = paraseFloat(mass);
+                radius = parseFloat(velocity);
+                force = parseFloat(force);
+                velocity = Math.sqrt(force/mass);
+                work = "We know that (mv<sup>2</sup>)/r = F<sub>c</sub>, which can be rearranged to isolate <em>v</em>. Doing this, we get v = (F<sub>c</sub>(r)/m)<sup>1/2</sup>, and in substituting the appropriate values, we get our final answer" + velocity + ".";
+                output2.innerHTML - "The velocity is " + velocity + ". Work: " + work;
+            }
+
+            if (radius == "solve"){
+                velocity = paraseFloat(velocity);
+                mass = parseFloat(mass);
+                force = parseFloat(force);
+                radius = (mass*Math.pow(v, 2))/force;
+                work = "We know that (mv<sup>2</sup>)/r = F<sub>c</sub>, which can be rearranged to isolate <em>r</em>. Doing this, we get (mv<sup>2</sup>)/(F<sub>c</sub>), and we can substitute the appropriate values to get a final anwer of " + radius + ".";
+                output2.innerHTML - "The radius is " + radius + ". Work: " + work;
+            }
+
+            if (force == "solve"){
+                velocity = paraseFloat(velocity);
+                radius = parseFloat(velocity);
+                mass = parseFloat(mass);
+                force = (mass*Math.pow(v, 2))/radius;
+                work = "We know that (mv<sup>2</sup>)/r = F<sub>c</sub>. Substituting the appropriate values in, we get our final answer to be " + force + "Newtons.";
+                output2.innerHTML = "The force is " + force + "N. Work: " + work;
+            }
+            
+        }
+
+        function friction(){
+            let cof = document.getElementById("cof").value;
+            let nForce = document.getElementById("nforce").value;
+            let friction = document.getElementById("friction").value;
+            let work = "";
+
+            if (cof == "solve"){
+                nForce = parseFloat(nForce);
+                friction = parseFloat(friction);
+                cof = friction/nForce;
+                work = "We know that <em>f</em> = &#956;N. We can rearrange this equation to isolate &#956;, which gets us to the value of " + cof + ".";
+                output3.innerHTML = "The coeffecient of friction is" + cof + ". Work: " + work;
+            }
+
+            if (nForce == "solve"){
+                cof = parseFloat(cof);
+                friction = parseFloat(friction);
+                nForce = friction/cof;
+                work = "We know that <em>f</em> = &#956;N. We'll rearrange this equation to isolate N, which concludes us to N = " + nForce + ".";
+                output3.innerHTML = "The normal force is " + nforce + ". Work: " + work;
+            }
+
+            if (friction == "solve"){
+                nForce = parseFloat(nForce);
+                cof = parseFloat(cof);
+                friction = cof*nForce;
+                work = "We know that <em>f</em> = &#956;N. We'll plug in values to find that <em>f</em> = " + friction + ".";
+                output3.innerHTML = "The friction force is " + friction + "N . Work: " + work;
+            }
+        }
+
+    </script>
+
+
+</body>
+
+
+
+
+
+</html>
+

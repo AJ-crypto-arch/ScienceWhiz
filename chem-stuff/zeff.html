@@ -7,15 +7,240 @@
     <title>Zeff</title>
 </head>
 <body>
-    <p>Z<sub>eff></sub> or </p>
+    <h1>Z<sub>eff</sub></h1>
+    <h2>What is Z<sub>eff</sub>?</h2>
+    <p>Z<sub>eff</sub> = Z - S (Z being number of protons and S being the number of inner electron) you can find number of inner electrons by using the atomic number of the noble gas that is before your atom. E.g, Phosphorus's number of inner electrons is 10 (Ne) The attraction the valence electrons have for the protons in the nucleus. This is in order to quantify the effect of the relative attraction onto the valence electrons from the nucleus. <br> The lower the Z<sub>eff</sub>, the bigger the radius as there is less attraction from the nucleus and the valence shell. More attraction means the valence electrons are closer to the nucleus which means a lower radius.</p>
+    <p>When calculating Z<sub>eff</sub> in the d or f blocks, you need to take into account that the electron in the d and f orbitals are inner electrons, not valence electrons. More attraction means the valence electrons are closer to the nucleus which means a lower radius of the atom. 
+        <br></p>
     <form onsubmit="return false">
-        <label for="">Input The Bond Here (Ex: C-H)</label>
-        <input type="text" name="bond" id="bond">
+        <label for="">Input The Element Here (Ex: He)</label>
+        <input type="text" name="element" id="element">
         <input type="submit" value="Calculate" onclick = "calc();">
         <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
     </form>
+    <p id = "output"></p>
     <script>
+        let atomnum = {
+                "H":1,
+                "He":2,
+                "Li":3,
+                "Be":4,
+                "B":5,
+                "C":6,
+                "N":7,
+                "O":8,
+                "F":9,
+                "Ne":10,
+                "Na":11,
+                "Mg":12,
+                "Al":13,
+                "Si":14,
+                "P":15,
+                "S":16,
+                "Cl":17,
+                "Ar":18,
+                "K":19,
+                "Ca":20,
+                "Sc":21,
+                "Ti":22,
+                "V":23,
+                "Cr":24,
+                "Mn":25,
+                "Fe":26,
+                "Co":27,
+                "Ni":28,
+                "Cu":29,
+                "Zn":30,
+                "Ga":31,
+                "Ge":32,
+                "As":33,
+                "Se":34,
+                "Br":35,
+                "Kr":36,
+                "Rb":37,
+                "Sr":38,
+                "Y":39,
+                "Zr":40,
+                "Nb":41,
+                "Mo":42,
+                "Tc":43,
+                "Ru":44,
+                "Rh":45,
+                "Pd":46,
+                "Ag":47,
+                "Cd":48,
+                "In":49,
+                "Sn":50,
+                "Sb":51,
+                "Te":52,
+                "I":53,
+                "Xe":54,
+                "Cs":55,
+                "Ba":56,
+                "La":57,
+                "Ce":58,
+                "Pr":59,
+                "Nd":60,
+                "Pm":61,
+                "Sm":62,
+                "Eu":63,
+                "Gd":64,
+                "Tb":65,
+                "Dy":66,
+                "Ho":67,
+                "Er":68,
+                "Tm":69,
+                "Yb":70,
+                "Lu":71,
+                "Hf":72,
+                "Ta":73,
+                "W":74,
+                "Re":75,
+                "Os":76,
+                "Ir":77,
+                "Pt":78,
+                "Au":79,
+                "Hg":80,
+                "Tl":81,
+                "Pb":82,
+                "Bi":83,
+                "Po":84,
+                "At":85,
+                "Rn":86,
+                "Fr":87,
+                "Ra":88,
+                "Ac":89,
+                "Th":90,
+                "Pa":91,
+                "U":92,
+                "Np":93,
+                "Pu":94,
+                "Am":95,
+                "Cm":96,
+                "Bk":97,
+                "Cf":98,
+                "Es":99,
+                "Fm":100,
+                "Md":101,
+                "No":102,
+                "Lr":103,
+                "Rf":104,
+                "Db":105,
+                "Sg":106,
+                "Bh":107,
+                "Hs":108,
+                "Mt":109,
+                "Ds":110,
+                "Rg":111,
+                "Cn":112,
+                "Uut":113,
+                "Fl":114,
+                "Uup":115,
+                "Lv":116,
+                "Uus":117,
+                "Uuo":118
+            }
         
+        function calc(){
+            let input = document.getElementById("element").value;
+            let a = atomnum[input];
+            let output = document.getElementById("output");
+            let ie = 0;
+            if (a <= 2){
+                ie = 1;
+            } 
+            else if (a > 2 && a <=  10){
+                ie = 2;
+            }
+            else if (a > 10 && a <= 18){
+                ie = 10;
+            }
+            else if (a > 18 && a <= 36 ){
+                ie = 18
+            }
+            else if (a > 36 && a <= 54 ){
+                ie = 36
+            }
+            else if (a > 184 && a <= 86 ){
+                ie = 184
+            }
+            else if (a > 86 && a <= 118 ){
+                ie = 86
+            }
+            if (a == 21 || a == 39 || a == 57 || a == 89){
+                ie += 1;
+            }
+            if (a == 22 || a == 40 || a == 58 || a == 90){
+                ie += 2;
+            }
+            if (a == 23 || a == 41 || a == a == 59 || a == 91){
+                ie += 3;
+            }
+            if (a == 24 || a == 42 || a == 60 || a == 92){
+                ie += 4;
+            }
+            if (a == 25 || a == 43 || a == 61 || a == 93){
+                ie += 5;
+            }
+            if (a == 26 || a == 44 || a == 62 || a == 94){
+                ie += 6;
+            }
+            if (a == 27 || a == 45 || a == 63 || a == 95){
+                ie += 7;
+            }
+            if (a == 28 || a == 46 || a == 64 || a == 96){
+                ie += 8;
+            }
+            if (a == 29 || a == 47 || a == 65 || a == 97){
+                ie += 9;
+            }
+            if (a == 30 || a == 48 || a == 66 || a == 98){
+                ie += 10;
+            }
+            if (a == 67 || a == 99){
+                ie += 11;
+            }
+            if (a == 68 || a == 100){
+                ie += 12;
+            }
+            if (a == 69 || a == 101){
+                ie += 13;
+            }
+            if (a == 70 || a == 102){
+                ie += 14;
+            }
+            if (a == 71 || a == 103){
+                ie += 15;
+            }
+            if (a == 72 || a == 104){
+                ie += 16;
+            }
+            if (a == 73 || a == 105){
+                ie += 17;
+            }
+            if (a == 74 || a == 106){
+                ie += 18;
+            }
+            if (a == 75 || a == 107){
+                ie += 19;
+            }
+            if (a == 76 || a == 108){
+                ie += 20;
+            }
+            if (a == 77 || a == 109){
+                ie += 21;
+            }
+            if (a == 78 || a == 110){
+                ie += 22;
+            }
+            if (a == 79 || a == 111){
+                ie += 23;
+            }
+            if (a == 80 || a == 112){
+                ie += 24;
+            }
+            output.innerHTML = "The effective nuclear charge is: " + a + " - " + ie + " = " + (a - ie);
+        }
     </script>
 </body>
 </html>
