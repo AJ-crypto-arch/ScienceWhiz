@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Calculator!</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <title>Kinematics Calculator!</title>
 </head>
 <body class="Page">
-    <h1>Physics Calculator!</h1>
-    <p>Please input all variables with meter/kilogram units.</p>
-    <form onsubmit="return false">
+    <h1 style = 'text-align:center;'>Kinematics Calculator!</h1>
+    <pstyle style = 'text-align:center;'>Please input all variables and only keep one variable to solve.</p>
+    <form  onsubmit="return false">
         <label for="deltax">&#916;x</label><br>
         <input type="text" id="deltax"><br>
 
@@ -27,13 +28,14 @@
     
         <label for = "vavg">V<sub>avg</sub></label><br>
         <input type = "text" id="vavg"><br>
+
     </form>
-    <button onclick= "everything();">Click Me for answers</button>
+    <button style='text-align: center;' onclick= "everything();">Click Me for answers</button>
     <p>The work: <br></p>
     <p id = "output"></p>
     
     
-    <button style="text-align:center;" onclick =  "location.href = 'physics.html'" >Back to Physics Page</button>
+    <button style="text-align:right;" onclick =  "location.href = 'physics.html'" >Back to Physics Page</button>
 
 
 
@@ -43,104 +45,166 @@
 
         function everything(){
 
-            let vavg1;
-            let t1;
-            let vinit1;
-            let vfin1;
-            let acc1;
-            let deltax1;
+           
             
+            let deltax = document.getElementById("deltax").value;
+            let vinit = document.getElementById("vinit").value;
+            let vfin = document.getElementById("vfin").value;
+            let acc = document.getElementById("acc").value;
+            let t = document.getElementById("t").value;
+            let vavg = document.getElementById("vavg").value;
+            let output = document.getElementById("output"); 
+            let work = "";
 
-
-            let variables = [deltax, vinit, vfin, acc, t, vavg];
-            let knowns = [];
-            let unknowns = [];
-
-            for(let i = 1; i <= variables.length; i++){
-                if(variables[i] != "unknown"){
-                    knowns.push(parseFloat(variables[i]));
-                }
-
-                if (variables[0] == "unknown"){
-                    unknowns.push("deltax");
-                }
-
-                if (variables[1] == "unknown"){
-                    unknowns.push("vinit");
-                }
-
-                if (variables[2] == "unknown"){
-                    unknowns.push("vfin");
-                }
-
-                if (variables[3] == "unknown"){
-                    unknowns.push("acc");
-                }
-
-                if (variables[4] == "unknown"){
-                    unknowns.push("t");
-                }
-
-                if (variables[5] == "unknown"){
-                    unknowns.push("vavg");
-                }
-            }
-
-            for(let j = 1; j <= variables.length; j++){
-                
-                while(variables[j] == "unknown"){
+            
+                if (deltax == "solve"){
                     
-                    for (let k = 1; k <= unknowns.length; k++){
-                    
-                        if (unknowns[k] == "deltax"){
-                            deltax1 = vavg1/t1;
-                            deltax1 = ((vinit1)*(t1)) + 0.5*((acc1)*Math.pow((t1), 2));
-                            deltax1 = (Math.pow((vfin1), 2) - Math.pow((vinit1, 2))/(2*(acc1)));
-                        }
-                    
-                        if(unknowns[k] == "vavg"){
-                            vavg1 = (deltax1)/t1;
-                            vavg1 = (vfin1+vinit1)/2;
-                        }
-                        
-                        if(unknowns[k] == "t")
-                        {
-                            t1 = (deltax1)/(vavg1);
-                            t1 = (( (vfin1)- (vinit1))/ (a));
-                            t1 = Math.sqrt((2*((deltax1)-((vinit1)*(t1))))/(a1));
-                        }
-
-                        if (unknowns[k] == "acc"){
-                            acc1 = ((vfin1)-(vinit1))/(t1);
-                            acc1 = (2*((deltax1)-((vinit1)*(t))))/Math.pow((t), 2);
-                            acc1 = ((Math.pow( (vfin), 2)) - (Math.pow( (vinit), 2))/(2* (deltax))); 
-                        }
-
-                        if(unknowns[k] == "vfin"){
-                            vfin1 = (2*vavg1) - vinit1;
-                            vfin1 =( vinit1) + ( (acc1) *  (t1));
-                            vfin1 = Math.sqrt((2* (acc1)* (deltax1)) + Math.pow( (vinit1), 2));
-                        }
-
-                        if (unknowns[k] == "vinit"){
-                            vinit1 = (2*vavg1) - vfin1;
-                            vinit1 =  (vfin1) - ((acc1)*(t1));
-                            vinit1 = ( (deltax1)-0.5*((acc1)*Math.pow( (t1), 2)))/(t1);
-                            vinit1 = Math.sqrt(Math.pow((vfin1), 2) - (2*(acc1)*(deltax1)));
-                        }
+                    if (t == "unknown" && vavg == "unknown"){
+                        vinit = parseFloat(vinit);
+                        acc = parseFloat(acc);
+                        vfin = parseFloat(vfin);
+                        deltax = (Math.pow(vfin), 2) - Math.pow((vinit, 2))/(2*(acc));
+                        work  = "We know that 2a &#8710;x = v<sub>f</sub><sup>2</sup> - v<sub>0</sub><sup>2</sup>. Rearranging, we get  &#8710;x = (v<sub>f</sub><sup>2</sup> - v<sub>0</sub><sup>2</sup>)/(2a). Plugging in the values, we get &";
+                    } else if (vavg == "unknown" && vfin == "unknown"){
+                        vinit = parseFloat(vinit);
+                        t = parseFloat(t);
+                        acc = parseFloat(acc);
+                        deltax = ((vinit)*(t)) + 0.5*((acc)*Math.pow((t), 2));
+                        work  = "We know that &#8710; x = v<sub>i</sub>(t) + 0.5(at<sup>2</sup>). Plugging in the corresponding values into the equation, we get &#8710; x = " + deltax+".";
                     }
+                    else{
+                        vavg = parseFloat(vavg);
+                        t = parseFloat(t);
+                        deltax = vavg*t;
+                        work = "We know that &#8710; x = v<sub>avg</sub>(t). Plugging into the corresponding values, we get our final value of &#8710; x = " + deltax + "."; 
+                    }
+                    output.innerHTML = " &#8710; x is "+deltax + ". Work: " + work;
                 }
-            }
-            let output = document.getElementById("output");
-            output.innerHTML = " Delta x: " + deltax1 + " Time: " + t1 + " Initial Velocity: " + vinit1 + " Final Velocity: " + vfin1 + " Acceleration: " + acc1 + " Average Velocity: " + vavg1;
-            /*document.getElementById("vavg").innerHTML = "Delta x" + vavg1;
-            document.getElementById("t").innerHTML = "Time:" + t1;
-            document.getElementById("vinit").innerHTML = vinit1;
-            document.getElementById("vfin").innerHTML = vfin1;
-            document.getElementById("acc").innerHTML = acc1;
-            document.getElementById("deltax").innerHTML = deltax1;*/
+                if (vinit == "solve"){
+                    if (vavg == "unknown" && vfin =="unknown"){
+                        deltax = parseFloat(deltax);
+                        t = parseFloat(t);
+                        acc = parseFloat(acc);
+                        vinit = ( (deltax)-0.5*((acc)*Math.pow(t, 2)))/(t);
+                        work = "We know that &#8710; x = v<sub>i</sub>(t) + 0.5(at<sup>2</sup>). Rearranging this equation to isolate V<sub>0</sub> on one side, you can simplify to get V<sub>0</sub> = " + vinit + ".";
+                    }
+                    else if (vavg == "unknown"){
+                        vfin = parseFloat(vfin);
+                        t = parseFloat(t);
+                        acc = parseFloat(acc);
+                        vinit =  (vfin) - ((acc)*(t));
+                        work = "We know that V<sub>f</sub> = V<sub>0</sub> + at. Rearranging this equation to isolate V<sub>0</sub> on one side, you can simplify using the known values to get V<sub>0</sub> = " + vinit + ".";
+                    }
+                    else if(t == "unknown" && vavg == "unknown"){
+                        deltax = parseFloat(deltax);
+                        vfin  = parseFloat(vfin);
+                        acc = parseFloat(acc);
+                        vinit = Math.sqrt(Math.pow((vfin), 2) - (2*(acc)*(deltax)));
+                        work = "We know that 2a &#8710;x = v<sub>f</sub><sup>2</sup> - v<sub>0</sub><sup>2</sup>. Rearranging this equation to isolate V<sub>0</sub> on one side, you can simplify using the known values to get V<sub>0</sub> = " + vinit + ".";
+                        
+                    }
+                    else{
+                        vavg = parseFloat(vavg);
+                        vfin = parseFloat(vfin);
+                        vinit = (2*vavg) - vfin;
+                        work = "We know that v<sub>avg</sub> = (v<sub>f</sub> + v<sub>i</sub> )/ 2. Rearranging this equation to isolate V<sub>0</sub> on one side, you can simplify using the known values to get V<sub>0</sub> = " + vinit + ".";
+                        
+                    }
+                    output.innerHTML = "The Initial Velocity is " + vinit + ". Work: " + work;
+                }
+                if(vfin == "solve"){
+                    
+                    if(acc == "unknown"){
+                        deltax = parseFloat(deltax);
+                        vinit = parseFloat(vinit);
+                        vavg = parseFloat(vavg);
+                        vfin = (2*vavg) - vinit;
+                        work = "We know that v<sub>avg</sub> = (v<sub>f</sub> +  v<sub>0</sub>)/2 is the formula for average speed. Rearranging this, we can make this to solve for v<sub>f</sub> as v<sub>f</sub> = 2v<sub>avg</sub> - v<sub>0</sub>. Plugging in the corresponding values, we get " + vfin + " as our final value.";
+                    }
+                    else if(t == "unknown" && vavg == "unknown"){
+                        vfin = Math.sqrt((2* (acc)* (deltax)) + Math.pow( (vinit), 2));
+                        work = "We know that 2a&#8710;x = v<sub>f</sub><sup>2</sup> - v<sub>i</sub><sup>2</sup>, which can then be rearranged for our purposes as (2a &#8710;x + v<sub>0</sub><sup>2</sup>)<sup>1/2</sup>. Plugging in the coressponding values that we know, we see that the value of v<sub>f</sub> is " + vfin + ".";
+                    }
+                    else{
+                        vfin = vinit + acc*t;
+                        work = "We know that v<sub>f</sub> = V<sub>i</sub> + at. There's no rearranging necessary, as we can simply plug in values to find that v<sub>f</sub> = " + vfin + ".";
+                    }
+                    output.innerHTML = "The Final velocity is " + vfin + ". Work: " +work;
+                }
+                if(t == "solve"){
 
+                    if(deltax == "unknown"){
+                        vfin = parseFloat(vfin);
+                        acc = parseFloat(acc);
+                        vinit = parseFloat(vinit);
+                        t = (( (vfin)- (vinit))/ (acc));
+                        work = "We know that a = (v<sub>f</sub> - v<sub>i</sub>)/t. Rearranging this equation to isolate t, we get t = (v<sub>f</sub> - v<sub>i</sub>)/a as our equation. Plugging in our corresponding values, we get our final value of t as " + t +"."
+                    }
+
+                    else if (vavg == "unknown" && vfin == "unknown"){
+                        acc = parseFloat(acc);
+                        vinit = parseFloat(vinit);
+                        deltax = parseFloat(deltax);
+                        t = Math.sqrt((2*((deltax)-((vinit)*(t))))/(acc));
+                        work = "We know that 2a &#8710;x = v<sub>f</sub><sup>2</sup> - v<sub>0</sub><sup>2</sup>. Rearranging this to isolate time on one side, we can simplify to find that time is " + t + ".";
+                    }
+                    else {
+                        vavg = parseFloat(vavg);
+                        deltax = parseFloat(deltax)
+                        t = deltax/vavg;
+                        work = "We know that &#8710; x = v<sub>avg</sub>(t). Rearranging this equation to isolate time, we can plug in corresponding values to find time as " + t + ".";                    
+                    }
+
+                    output.innerHTML ="The change in time is " +  t + ". Work: " + work;
+                }
+
+                if(acc == "solve"){
+                    if (deltax == "unknown"){
+                        vfin = parseFloat(vfin);
+                        vinit = parseFloat(vinit);
+                        t = parseFloat(t);
+                        acc = ((vfin)-(vinit))/(t);
+                        work = "We know that a = (v<sub>f</sub> - v<sub>i</sub>)/t. For this, we can simply plug in corresponding values to find acceleration as " + acc + ".";
+                        
+                    }
+
+                    else if (t == "unknown" && vavg == "unknown"){
+                        vfin = parseFloat(vfin);
+                        vinit = parseFloat(vinit);
+                        deltax = parseFloat(deltax);
+                        acc = ((Math.pow( (vfin), 2)) - (Math.pow( (vinit), 2))/(2* (deltax)));
+                        work = "We know that 2a&#8710;x = v<sub>f</sub><sup>2</sup> - v<sub>i</sub><sup>2</sup>"
+                    }
+
+                    else {
+                        t = parseFloat(t);
+                        deltax = parseFloat(deltax);
+                        vinit = parseFloat(vinit);
+                        acc = (2*((deltax)-((vinit)*(t))))/(Math.pow((t), 2));
+                        work = "We know that &#8710;x = v<sub>0</sub>t + 0.5at<sup>2</sup>. Rearranging this to isolate <em>a</em>, we get a = 2( &#8710;x - v<sub>0</sub>t)/(t<sup>2</sup>. Plugging in the corresponding values, we get our final answer as " + acc + ".";
+                    }
+                    output.innerHTML = "The acceleration is " + acc + ". Work: " + work;
+                }
+
+                if(vavg == "solve"){
+                    if(deltax == "unknown" && t == "unknown"){
+                        vfin = parseFloat(vfin);
+                        vinit = parseFloat(vinit);                        
+                        vavg = (vfin+vinit)/2;
+                        work = "We know that v<sub>avg</sub> = (v<sub>f</sub> +  v<sub>0</sub>)/2. We can plug in values to find that v<sub>avg</sub> is " + vavg + ".";
+                    }
+                    else{
+                        t = parseFloat(t);
+                        deltax = parseFloat(deltax);
+                        vavg = deltax/t;
+                        work = work  = "We know that &#8710; x = v<sub>avg</sub>(t). Rearranging this to isolate v<sub>avg</sub>, we can find that v<sub>avg</sub> is " + vavg + ".";
+                    }
+                    output.innerHTML = "The average velocity is " + vavg + ". Work: " + work;
+                }
+            
         }
+
+        
 
 
     </script>
@@ -151,4 +215,3 @@
     </script>
 
 </body>
-
