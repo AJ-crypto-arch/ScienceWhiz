@@ -5,17 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <link href="physics.css" rel="stylesheet" type="text/css" />
     <title>Kinematics</title>
-    <p>Kinematics is a subfield of physics, developed in classical mechanics, that describes the motion of points, boides(objects) without considering the forces that cause them to move. Included with this a several equations that accurately describe motion as long as acceleration is constant.</p>
-    <p>There are 5 main equations to use when trying to use kinematics to describe the motion of objects. Below are the full forms of the 5 kinematic equations, as well as their variable forms:</p>
-    <p> 1. Total displacement = (Average velocity over the trip (final velocity - initial velocity)) * time expired OR \trianglex = vt <br> 2. final velocity = initial velocity + (acceleration of object * time expired) OR Vf = Vi + at <br> 3. (average velocity = initial velocity + final velocity)/2 OR V(avg) = (Vf + Vi)/2 <br> 4. total displacement = (initial velocity * time elapsed) + 0.5(acceleration of object)(time elapsed squared) OR \trianglex = Vot + 1/2(a)(t)^2 <br> 5. 2(acceleration of object)(total displacement) = (final velocity squared) - (initial velocity squared) OR 2a\trianglex = (Vf)^2 - (Vi)^2 </p>
-    <p> When given 3 variable throughout any of the 5 equations, through substitution, we are able to calculate any of the unknown variables. </p>
-    <p> For example, if we are given initial velocity, final velocity, and accelration, we are able to find time through Equation 2. </p>
-</head>
-<button style="text-align:center;" onclick =  "location.href = 'PhysicsCalculator.html'" >Go to Physics Calculator!</button>
-<button style="text-align:center;" onclick =  "location.href = 'index.html'" >Back to Main Page</button>
-<body>
-    
-
-
+    <body>
+    <h1 style = 'text-align: center;'>Kinematics</h1>
+    <div class = words3>
+    <p>
+        Kinematics is the study of movement <em>without</em> considering the apsect of mass or the forces that cause them to move.  Defined by 5 equations, kinematics
+        include 5 main variables to solve or define. They are displacement(&#916;x), time(<em>t</em>), acceleration(<em>a</em>), Initial velocity(v<sub>0</sub>), and
+        Final Velocity(v<sub>f</sub>). The equations are defined as follows:  
+    </p>
+    </div>
+    <div class = "equations">
+    <p>
+        $$v_{avg} = \frac{v_f+v_0}{2}$$ 
+        $$v_f = v_0 + at$$
+        $$\triangle x =v_0t + \frac{1}{2}at^2$$
+        $$v_f^2 = v_0^2 +  2a\triangle x$$ 
+        $$\triangle x = v_{avg}t = \frac{v_f+v_0}{2}t$$
+    </p>
+    </div>
+    <p class = "words3">
+        Using these equations, we can solve for almost all problems involving movement without considering mass, including movement on inclines through trigonometric functions such
+        as sin() and cos().
+    </p>
     </body>
+</head>
+<h2 style = 'text-align: center;'>Check out calculator below!</h2>
+
+<button class='button1'  onclick =  "location.href = 'PhysicsCalculator.html'" >Go to Kinematics Calculator!</button>
+<button class='button2'  onclick = 'location.href = "physics.html"'>Back to Main Physics Page</button>
+
