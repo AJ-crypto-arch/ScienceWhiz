@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
     <title>Molar Mass</title>
 </head>
 <body>
-    <h1>Molar Mass</h1>  
-    <h2>What is Molar Mass?</h2>
-    <p>Molar mass is the amount of grams in 1 mole of a substance. The molar mass of a chemical compound can be achieved by adding up the atomic masses of each atom. The units are $$\frac{g}{mol}$$</p>
+    <h1 class="words" style="text-align: center;">Molar Mass</h1>  
+    <h1 style="text-align: center;">What is Molar Mass?</h2>
+    <p class="words3">Molar mass is the amount of grams in 1 mole of a substance. The molar mass of a chemical compound can be achieved by adding up the atomic masses of each atom. The units are $$\frac{g}{mol}$$</p>
 
-    <form onsubmit="return false">
-        <label for="">Input Your Molecule Here (enclose the subscript in brackets: C{1}H{4})</label>
+    <form onsubmit="return false" class="equations">
+        <label for=""> <b>Input Your Molecule Here (enclose the subscript in brackets: C{1}H{4})</b></label>
         <input type="text" name="molecule" id="molecule">
-        <input type="submit" value="Calculate" onClick = "calc()">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+        <input class = 'but5' type="submit" value="Calculate" onClick = "calc()">
+        <button class = 'but6' style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
 
     </form>
     <p id = "output"></p>

@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
     <title>gaslaws</title>
 </head>
 <body>
-    <h1>Gas Laws</h1>
-    <h2>What Are the Different Gas Laws?</h2>
-    <p>Boyle's Law: P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>. When the volume of a gas increases, the pressure of the gas decreases and visa versa. Gay-Lussac's Law: P<sub>1</sub>/T<sub>1</sub>) = (P<sub>2</sub>/T<sub>2</sub>). When the pressure of a gas decreases, the temperature decreases and visa versa. Charle's Law: (V<sub>1</sub>/T<sub>1</sub>) = (V<sub>2</sub>/T<sub>2</sub>). When the volume of a gas decreases, the temperature decreases and visa versa. <br></p>
-    <p> These laws help describe what happens to the gasses if one of the attributes changes. <br></p>
-    <p>Fill in the information for any needed formula. For any unknown variable, type "solve".</p>
-    <form onsubmit="return false"> 
-        <label>Boyle's Law (P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>)<br><br></label>
+    <h1 class="words">Gas Laws</h1>
+    <h1 style="text-align: center;">What Are the Different Gas Laws?</h2>
+    <p class="words3">Boyle's Law: P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>. When the volume of a gas increases, the pressure of the gas decreases and visa versa. Gay-Lussac's Law: (P<sub>1</sub>/T<sub>1</sub>) = (P<sub>2</sub>/T<sub>2</sub>). When the pressure of a gas decreases, the temperature decreases and visa versa. Charle's Law: (V<sub>1</sub>/T<sub>1</sub>) = (V<sub>2</sub>/T<sub>2</sub>). When the volume of a gas decreases, the temperature decreases and visa versa. <br></p>
+    <p class="words3"> These laws help describe what happens to the gasses if one of the attributes changes. <br></p>
+    <p class="words3"><b>Fill in the information for any needed formula. For any unknown variable, type "solve".</b></p>
+    <form onsubmit="return false" class="equations" style="text-align: center;"> 
+        <b><label>Boyle's Law (P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>)<br><br></label></b>
         <label >P<sub>1</sub> (initial pressure) &emsp; &emsp;</label>
         <input type="text" name="p1" id="p1">
         <label >V<sub>1</sub> (initial volume)</label>
@@ -22,11 +23,11 @@
         <input type="text" name="p2" id="p2">
         <label >V<sub>2</sub> (after volume) </label>
         <input type="text" name="v2" id="v2">
-        <input type="submit" value="Calculate" onclick = "boyles();">
+        <input type="submit" value="Calculate" onclick = "boyles();" class="but11">
     </form>
-    <p id = "output1"></p>
-    <form onsubmit="return false"> 
-        <label><br><br>Gay-Lussac's Law (P<sub>1</sub>/T<sub>1</sub>) = (P<sub>2</sub>/T<sub>2</sub>)</label>
+    <p id = "output1" class="words3"></p>
+    <form onsubmit="return false" class="equations" style="text-align: center;"> 
+        <b><label><br><br>Gay-Lussac's Law (P<sub>1</sub>/T<sub>1</sub>) = (P<sub>2</sub>/T<sub>2</sub>)</label></b>
         <label ><br><br>P<sub>1</sub> (initial pressure) &emsp; &emsp;</label>
         <input type="text" name="p1" id="p1">
         <label >T<sub>1</sub> (initial temperature)</label>
@@ -35,12 +36,11 @@
         <input type="text" name="p2" id="p2">
         <label >T<sub>2</sub> (after temperature) </label>
         <input type="text" name="t2" id="t2">
-        <input type="submit" value="Calculate" onclick = "lussacs();">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+        <input type="submit" value="Calculate" onclick = "lussacs();" class="but12">
     </form>
-    <p id = "output2"></p>
-    <form onsubmit="return false"> 
-        <label><br><br>Charles's Law (V<sub>1</sub>/T<sub>1</sub>) = (V<sub>2</sub>/T<sub>2</sub>)</label>
+    <p id = "output2" class="words3"></p>
+    <form onsubmit="return false" class="equations" style="text-align: center;"> 
+        <b><label><br><br>Charles's Law (V<sub>1</sub>/T<sub>1</sub>) = (V<sub>2</sub>/T<sub>2</sub>)</label></b>
         <label ><br><br>V<sub>1</sub> (initial volume) &emsp; &emsp;</label>
         <input type="text" name="v1" id="v1">
         <label >T<sub>1</sub> (initial temperature)</label>
@@ -49,9 +49,11 @@
         <input type="text" name="v2" id="v2">
         <label >T<sub>2</sub> (after temperature)</label>
         <input type="text" name="t2" id="t2">
-        <input type="submit" value="Calculate" onclick = "charles();">
+        <input type="submit" value="Calculate" onclick = "charles();" class="but13">
     </form>
-    <p id = "output3"></p>
+    <p id = "output3" class="words3"></p>
+    <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+
     <script>
         function boyles(){
             let output1 = document.getElementById("output1");

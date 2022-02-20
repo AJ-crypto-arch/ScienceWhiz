@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
     <title>Zeff</title>
 </head>
 <body>
-    <h1>Z<sub>eff</sub></h1>
-    <h2>What is Z<sub>eff</sub>?</h2>
-    <p>Z<sub>eff</sub> = Z - S (Z being number of protons and S being the number of inner electron) you can find number of inner electrons by using the atomic number of the noble gas that is before your atom. E.g, Phosphorus's number of inner electrons is 10 (Ne) The attraction the valence electrons have for the protons in the nucleus. This is in order to quantify the effect of the relative attraction onto the valence electrons from the nucleus. <br> The lower the Z<sub>eff</sub>, the bigger the radius as there is less attraction from the nucleus and the valence shell. More attraction means the valence electrons are closer to the nucleus which means a lower radius.</p>
-    <p>When calculating Z<sub>eff</sub> in the d or f blocks, you need to take into account that the electron in the d and f orbitals are inner electrons, not valence electrons. More attraction means the valence electrons are closer to the nucleus which means a lower radius of the atom. 
+    <h1 style="text-align: center;" class="words">Z<sub>eff</sub></h1>
+    <h1 style="text-align: center;">What is Z<sub>eff</sub>?</h2>
+    <p class="words3">Z<sub>eff</sub> = Z - S (Z being number of protons and S being the number of inner electron) you can find number of inner electrons by using the atomic number of the noble gas that is before your atom. E.g, Phosphorus's number of inner electrons is 10 (Ne) The attraction the valence electrons have for the protons in the nucleus. This is in order to quantify the effect of the relative attraction onto the valence electrons from the nucleus. <br> The lower the Z<sub>eff</sub>, the bigger the radius as there is less attraction from the nucleus and the valence shell. More attraction means the valence electrons are closer to the nucleus which means a lower radius.</p>
+    <p class="words3">When calculating Z<sub>eff</sub> in the d or f blocks, you need to take into account that the electron in the d and f orbitals are inner electrons, not valence electrons. More attraction means the valence electrons are closer to the nucleus which means a lower radius of the atom. 
         <br></p>
-    <form onsubmit="return false">
+    <form onsubmit="return false" class="equations" style="text-align: center;">
         <label for="">Input The Element Here (Ex: He)</label>
         <input type="text" name="element" id="element">
-        <input type="submit" value="Calculate" onclick = "calc();">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
-    </form>
+        <input type="submit" value="Calculate" onclick = "calc();" class="but8"><br><br>
+<br>    </form>
+    <button class = 'but7' style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+
     <p id = "output"></p>
     <script>
         let atomnum = {

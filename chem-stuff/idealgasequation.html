@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
+
     <title>Ideal Gas Equation</title>
 </head>
 <body>
-    <h1>Ideal Gas Equation</h1>
-    <h2>What are Ideal Gasses?</h2>
-    <p>Ideal gasses are real gasses that follow Kinetic Molecular Theory (KMT)</p>
+    <h1 style="text-align: center;" class="words">Ideal Gas Equation</h1>
+    <h1 style="text-align: center;">What are Ideal Gasses?</h2>
+    <b>
+        <p>Ideal gasses are real gasses that follow Kinetic Molecular Theory (KMT)</p>
     <ol>
         <li>Gases consist of small particles, spaced far apart</li>
         <li>Collisions between are elastic – meaning no energy is lost during these collisions </li>
@@ -18,8 +21,10 @@
         <li>No attraction or repulsion between particles</li>
         <li>Kinetic energy is directly related to temperature</li>
     </ol>
-    <p>Fill in the information for any needed formula. For any unknown variable, type "solve".</p>
-    <form onsubmit="return false">
+    <p>Ideal Gas Formula: PV=nRT. You can find P(pressure), V(volume), n(moles), T(temperature) of a gas by knowing the other 3 characteristic. R is the ideal gas law constant in order to connect all the units together. </p>
+    </b>
+    <p class="words3">Fill in the information for any needed formula. For any unknown variable, type "solve".</p>
+    <form onsubmit="return false" class="equations" style="text-align: center;">
         <label for=""> For pressure, assume atm (1 atm = 760 mmHg). For volume, assume liters. For temperature, assume Kelvins (add 273 to Celcius). <br> Type in the word "solve" for the variable you want to solve for. <br></label>
         <label for=""><br>Enter Pressure:<br></label>
         <input type="text" name="P" id="P">
@@ -28,11 +33,12 @@
         <label for=""><br>Enter Number of Moles:<br></label>
         <input type="text" name="n" id="n">
         <label for=""><br>Enter Temperature:<br></label>
-        <input type="text" name="T"id = "T">
-        <input type="submit" value="Calculate" onclick = "calc();">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+        <input type="text" name="T"id = "T"><br><br><br><br><br>
+        <input type="submit" value="Calculate" onclick = "calc();" class="but10">
+        
     </form>
-    <p id = "output"></p>
+    <button class = 'but9' style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+    <p id = "output" class = "word3"></p>
 <script>
     function calc(){
         let p = document.getElementById("P").value;

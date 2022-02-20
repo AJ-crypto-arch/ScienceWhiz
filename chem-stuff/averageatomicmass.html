@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
     <title>Average Atomic Mass</title>
 </head>
 <body>
-    <h1>Average Atomic Mass</h1>  
-    <h2>What is Average Atomic Mass?</h2>
-    <p>Isotopes of an element have differing amount of neutrons in it. Average atomic mass is the average mass of all the isotopes of a chemical combined together.<br>One way to write the isotopes is like this: Element-Mass_Number (Hydrogen-3) Mass Number is the sum of the number protons and neutron.</p>
+    <h1 class = "words" style="text-align: center;">Average Atomic Mass</h1>  
+    <h1 style="text-align: center;">What is Average Atomic Mass?</h2>
+    <p class = "words3">Isotopes of an element have differing amount of neutrons in it. Average atomic mass is the average mass of all the isotopes of a chemical combined together.<br>One way to write the isotopes is like this: Element-Mass_Number (Hydrogen-3) Mass Number is the sum of the number protons and neutron.</p>
 
-    <form onsubmit = "return false">
-        <label for="">Input the Masses For All the Isotopes of a Given Element in a Comma-Separated List (Ex: 25.11,36.29,23.58) <br></label>
+    <form onsubmit = "return false" style="text-align: center;" class = "equations" >
+        <label for="" >Input the Masses For All the Isotopes of a Given Element in a Comma-Separated List (Ex: 25.11,36.29,23.58) <br></label>
         <input type="text" name="mass" id="mass">
         <label for=""><br>Input % of Abundances in a Comma-Separated List (Ex: 25,33,32)<br></label>
-        <input type="text" name = "abundances" id = "abundances">
-        <input type="submit" value="Calculate" onclick = "calc();">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+        <input type="text" name = "abundances" id = "abundances"> <br> <br> <br> 
+        <input type="submit" value="Calculate" onclick = "calc();" class ="button3">
     </form>
-    <p id = "output"></p>
+    <button class="button4" style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+    <p id = "output" class="words3"></p>
     <script>
         function calc(){
             let input = document.getElementById("mass").value;

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="physics.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
 </head>
 <body>
-    <h1 style='text-align: center;'>Forces Calculator!</h1>
-    <p style='text-align: center;'>Please enter values in usual SI units(kg, newtons, meters, seconds, etc.) Please leave only one unknown when solving for the variable.</p>
-    
-    <h1>Force</h1>
+    <h1 style='text-align: center;' class="words">Forces Calculator!</h1>
+    <p style='text-align: center;' class="words3">Please enter values in usual SI units(kg, newtons, meters, seconds, etc.) Please leave only one unknown when solving for the variable.</p>
+    <div class = "equations">
+    <h1 style = 'text-align:center;'>Force</h1>
     <form onsubmit="return false" style='text-align: center'>
         <label for="mass">Mass</label>
         <input type="text" id ="mass">   
@@ -21,11 +22,11 @@
         <label for="newtons">Force(Magnitude)</label>
         <input type="text" id="newtons">
     </form>
-    <button style='text-align: center' onclick="fma();">Click to calculate force</button>
-    <p id="output"></p>
+    <button class="but5" style='text-align: center' onclick="fma();">Calculate</button>
+    <p id="output" class="words3"></p>
     
     
-    <h1>Friction</h1>
+    <h1 style = 'text-align:center;'>Friction</h1>
     <form onsubmit="return false" style='text-align: center'>
         <label for="cof">Coeffecient of Friction</label>
         <input type="text" id ="cof">
@@ -36,11 +37,11 @@
         <label for="force">Friction Force(Magnitude)</label>
         <input type="text" id="force">
     </form>
-    <button style='text-align: center' onclick="friction();">Click to calculate force</button>
-    <p id="output2"></p>
+    <button class="but6" style='text-align: center' onclick="friction();">Calculate</button>
+    <p id="output2" class="words3"></p>
     
     
-    <h1>Centripetal Force</h1>
+    <h1 style = 'text-align:center;' >Centripetal Force</h1>
     <form onsubmit="return false" style='text-align: center'>
         <label for="mass">Mass</label>
         <input type="text" id ="mass">
@@ -54,9 +55,11 @@
         <label for="newtons">Centripital Force(Magnitude)</label>
         <input type="text" id="newtons">
     </form>
-    <button style='text-align: center' onclick="centripetal();">Click to calculate force</button>
-    <p id="output3"></p>
-    <button style = 'text-align: center' onclick = 'location.href = "physics.html"'>Back to Main Physics Page</button>
+    <button class = 'but7' style='text-align: center' onclick="centripetal();">Calculate</button>
+    <p id="output3" class="words3"></p>
+    </div>
+
+    <button class = 'but8' onclick = 'location.href = "physics.html"'>Back to Main Physics Page</button>
 
     <script type="text/javascript"> 
         function fma(){

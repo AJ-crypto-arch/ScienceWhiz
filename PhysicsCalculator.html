@@ -5,37 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <link href="physics.css" rel="stylesheet" type="text/css" />
     <title>Kinematics Calculator!</title>
 </head>
 <body class="Page">
-    <h1 style = 'text-align:center;'>Kinematics Calculator!</h1>
-    <pstyle style = 'text-align:center;'>Please input all variables and only keep one variable to solve. For the variable you wnat to solve for, please input 'solve'.</p>
-    <form  onsubmit="return false">
-        <label for="deltax">&#916;x</label><br>
+    <h1 style = 'text-align:center;' class = "words">Kinematics Calculator!</h1>
+    <p style = 'text-align:center;' class = "words3">Please input all variables and only keep one variable to solve. For the variable you want to solve for, please input 'solve'.</p>
+    <div class = "equations">
+    <form  style = 'text-align: center;' onsubmit="return false" >
+        <label for="deltax">&#916;x:</label>
         <input type="text" id="deltax"><br>
 
-        <label for = "vinit">V<sub>0</sub></label><br>
+        <label for = "vinit">V<sub>0</sub>:</label>
         <input type = "text" id = "vinit"><br>
 
-        <label for = "vfin">V<sub>f</sub></label><br>
+        <label for = "vfin">V<sub>f</sub>:</label>
         <input type = "text" id = "vfin"><br>
 
-        <label for = "acc">a</label><br>
+        <label for = "acc">a:  </label>
         <input type = "text" id = "acc"><br>
         
-        <label for = "t">t</label><br>
+        <label for = "t">t:  </label>
         <input type="text" id="t" ><br>
     
-        <label for = "vavg">V<sub>avg</sub></label><br>
+        <label for = "vavg">V<sub>avg</sub>:</label>
         <input type = "text" id="vavg"><br>
 
     </form>
-    <button style='text-align: center;' onclick= "everything();">Click Me for answers</button>
-    <p>The work: <br></p>
-    <p id = "output"></p>
+    <button style='text-align: center;' onclick= "everything();" class = "but1">Calculate</button>
+    </div>
+    <p class = 'words3'>The work: <br></p>
+    <p id = "output" class = "words3"></p>
     
     
-    <button style="text-align:right;" onclick =  "location.href = 'physics.html'" >Back to Physics Page</button>
+    <button style="text-align:right;" onclick =  "location.href = 'physics.html'" class = "but2">Back to Physics Page</button>
 
 
 

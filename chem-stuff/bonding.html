@@ -3,21 +3,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/chemistry.css" rel="stylesheet" type="text/css" />
     <title>Bonding</title>
 </head>
 <body>
-    <h1>Bonding</h1>  
-    <h2>How do you find what kind of bond is between atoms?</h2>
-    <p>Bonding can be found my subtracting the electronegativity of one element from another. If the difference is less than 0.5, it is nonpolar  covalent. If the difference is 0.5-2.1, it is polar covalent. If the difference is greater than 2.1, it is ionic.<br></p>
-    <p><br>Polar bonds are where electrons are shared between 2 nonmetals. Polar Bonds is where the electrons that are shared are slightly closer to one atom. Nonpolar is where the electrons that are shared are near the middle. <br>Ionic bond is between a metal and a nonmetal where the electron(s) are transferred from the metal to the nonmetal. <br></p>
-    <p>Atoms make bonds to be more stable through filling up their energy level with electrons</p>
-    <form onsubmit="return false">
-        <label for="">Input The Bond Here (Ex: C-H)</label>
+    <h1 class="words" style="text-align: center;">Bonding</h1>  
+    <h2 style="text-align: center;">How do you find what kind of bond is between atoms?</h2>
+    <p class="words3">Bonding can be found my subtracting the electronegativity of one element from another. If the difference is less than 0.5, it is nonpolar  covalent. If the difference is 0.5-2.1, it is polar covalent. If the difference is greater than 2.1, it is ionic.<br></p>
+    <p class="words3"><br>Polar bonds are where electrons are shared between 2 nonmetals. Polar Bonds is where the electrons that are shared are slightly closer to one atom. Nonpolar is where the electrons that are shared are near the middle. <br>Ionic bond is between a metal and a nonmetal where the electron(s) are transferred from the metal to the nonmetal. <br></p>
+    <p class="words3">Atoms make bonds to be more stable through filling up their energy level with electrons</p>
+    <form onsubmit="return false" class="equations">
+        <label for="" class="words3"><b>Input The Bond Here (Ex: C-H)</b></label>
         <input type="text" name="bond" id="bond">
-        <input type="submit" value="Calculate" onclick = "calc();">
-        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+        <input type="submit" class="button1" value="Calculate" onclick = "calc();">
+        
     </form>
-    <p id = "thing"></p>
+    <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" class = "button2">Back to Chemistry Page</button>
+    <p id = "thing" class="words3"></p>
     <script>
         let dict = {
             "H":	2.2	,

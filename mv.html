@@ -5,37 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momentum and Impulse</title>
+    <link href="physics.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>Momentum and Impulse Calculator!</h1>
+    <h1 class="words" style="text-align: center;">Momentum and Impulse Calculator!</h1>
 
-<h2>Momentum</h2>
-    <p>Please write "solve" for the variable you want to solve for.</p>
-<form onsubmit = "return false">
+<h1 style = "text-align: center;">Momentum</h2>
+    <p class = "words3">Please write "solve" for the variable you want to solve for.</p>
+<form onsubmit = "return false" style = "text-align: center;" class="equations">
 
-    <label for="mass">Mass:</label>
-    <input type="text" id="mass">
+    <label for="mass" >Mass<label>
+    <input type="text" id="mass"><br>
     
-    <label for="velinit"> v<sub>0</sub>:</label>
-    <input type="text" id="velinit">
+    <label for="velinit">v<sub>0</sub>:</label>
+    <input type="text" id="velinit"><br>
     
-    <label for="impulse"> Impulse:</label>
-    <input type="text" id="impulse">
+    <label for="impulse">Impulse:</label>
+    <input type="text" id="impulse"><br>
 
-    <label for="velfin">  v<sub>f</sub>:</label>
-    <input type="text" id="velfin">
+    <label for="velfin">v<sub>f</sub>:</label>
+    <input type="text" id="velfin"><br>
     
-    <label for="newtons"> Force:</label>
-    <input type="text" id="newtons">
+    <label for="newtons">Force:</label>
+    <input type="text" id="newtons"><br>
 
-    <label for="time"> Time:</label>
-    <input type="text" id="time">
+    <label for="time">Time:</label>
+    <input type="text" id="time"><br>
 
-    <label for="momentum">  &#8710;p</label>
-    <input type="text" id="momentum">
+    <label for="momentum">&#8710;p</label>
+    <input type="text" id="momentum"><br>
 </form>
-<button style = 'text-align: center;' onclick = 'everything()'>Calculate</button>
-<button style = 'text-align: center' onclick = 'location.href = "physics.html"'>Back to Main Physics Page</button>
+<button class="but11" style = 'text-align: center;' onclick = 'everything()'>Calculate</button>
+<button  class="but12" style = 'text-align: center' onclick = 'location.href = "physics.html"'>Back to Main Physics Page</button>
 <p id="output"></p>
 
 
