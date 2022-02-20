@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ =<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,9 @@
 <body>
     <h1>Momentum and Impulse Calculator!</h1>
 
-<h2>Momentum<h2>
+<h2>Momentum</h2>
     <p>Please leave only one unknown in the boxes below for best preformance.</p>
-<form onsubmit="return false">
+<form onsubmit = "return false">
 
     <label for="mass">Mass:</label>
     <input type="text" id="mass">
@@ -33,9 +33,8 @@
 
     <label for="momentum">  &#8710;p</label>
     <input type="text" id="momentum">
-    
-
 </form>
+<button style = 'text-align: center;' onclick = 'everything()'>Calculate</button>
 <p id="output"></p>
 
 
@@ -82,7 +81,7 @@
             vinit = parseFloat(vinit);
             momentum = parseFloat(momentum);
             vfin = ((mass*vinit) + momentum)/mass;
-            work = "We know that  &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). We can then rearrange this equation to isolate v<sub>f</sub>, getting us a final value of " + vinit + ".";
+            work = "We know that  &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). We can then rearrange this equation to isolate v<sub>f</sub>, getting us a final value of " + vfin + ".";
             output.innerHTML = "The final recorded velocity of the object is " + vfin + ". Work: " + work;
         }
 
