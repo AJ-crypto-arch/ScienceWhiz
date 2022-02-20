@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
     <title>Molar Mass</title>
 </head>
 <body>
     <h1>Molar Mass</h1>  
     <h2>What is Molar Mass?</h2>
-    <p>Molar mass is the amount of grams in 1 mole of a substance. The molar mass of a chemical compound can be achieved by adding up the atomic masses of each atom.<br></p>
+    <p>Molar mass is the amount of grams in 1 mole of a substance. The molar mass of a chemical compound can be achieved by adding up the atomic masses of each atom. The units are $$\frac{g}{mol}$$</p>
 
-    <form action="">
-        <label for="">input how many atoms are in your compound</label>
+    <form onsubmit="return false">
+        <label for="">Input Your Molecule Here (enclose the subscript in brackets: C{1}H{4})</label>
+        <input type="text" name="molecule" id="molecule">
+        <input type="submit" value="Calculate" onClick = "calc()">
+        <button style="text-align:center;" onclick =  "location.href = '/chemistry.html'" >Back to Chemistry Page</button>
+
     </form>
-    <form action="molarmass.html">
-        <!-- <input>  -->
-    </form>
+    <p id = "output"></p>
+
     <script>
-    let atomic ={
-        "H":1.00797,
+        let atomic ={
+        "H": 1.00797,
         "He":4.0260,
         "Li":6.941,
         "Be":9.01218,
@@ -128,8 +132,20 @@
         "Bh":262,
         "Db":262,
         "Sg":263
-    }
-    
+    };
+        function calc(){
+            let input = document.getElementById("molecule").value;
+            console.log(input);
+            let output = document.getElementById("output");
+            let atomandamount = input.split(/[{}]/);
+            let s = "";
+            let total = 0;
+            for (var i = 0; i < atomandamount.length-2; i+=2){
+                s +=  atomandamount[i+1] +"("+atomic[atomandamount[i]]+") + ";
+                total += parseInt(atomandamount[i+1]) * atomic[atomandamount[i]];
+            }
+            output.innerHTML = s.slice(0, -2) + " = " + total + " g/mol";
+        }
     </script>
 </body>
 </html>

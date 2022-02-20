@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Calculator!</title>
+</head>
+<body class="Page">
+    <h1>Physics Calculator!</h1>
+    <p>Please input all variables with meter/kilogram units.</p>
+    <form onsubmit="return false">
+        <label for="deltax">&#916;x</label><br>
+        <input type="text" id="deltax"><br>
+
+        <label for = "vinit">V<sub>0</sub></label><br>
+        <input type = "text" id = "vinit"><br>
+
+        <label for = "vfin">V<sub>f</sub></label><br>
+        <input type = "text" id = "vfin"><br>
+
+        <label for = "acc">a</label><br>
+        <input type = "text" id = "acc"><br>
+        
+        <label for = "t">t</label><br>
+        <input type="text" id="t" ><br>
+    
+        <label for = "vavg">V<sub>avg</sub></label><br>
+        <input type = "text" id="vavg"><br>
+    </form>
+    <button onclick= "everything();">Click Me for answers</button>
+    <p>The work: <br></p>
+    <p id = "output"></p>
+    
+    
+    <button style="text-align:center;" onclick =  "location.href = 'physics.html'" >Back to Physics Page</button>
+
+
+
+    
+
+    <script type="text/javascript">
+
+        function everything(){
+
+            let vavg1;
+            let t1;
+            let vinit1;
+            let vfin1;
+            let acc1;
+            let deltax1;
+            
+
+
+            let variables = [deltax, vinit, vfin, acc, t, vavg];
+            let knowns = [];
+            let unknowns = [];
+
+            for(let i = 1; i <= variables.length; i++){
+                if(variables[i] != "unknown"){
+                    knowns.push(parseFloat(variables[i]));
+                }
+
+                if (variables[0] == "unknown"){
+                    unknowns.push("deltax");
+                }
+
+                if (variables[1] == "unknown"){
+                    unknowns.push("vinit");
+                }
+
+                if (variables[2] == "unknown"){
+                    unknowns.push("vfin");
+                }
+
+                if (variables[3] == "unknown"){
+                    unknowns.push("acc");
+                }
+
+                if (variables[4] == "unknown"){
+                    unknowns.push("t");
+                }
+
+                if (variables[5] == "unknown"){
+                    unknowns.push("vavg");
+                }
+            }
+
+            for(let j = 1; j <= variables.length; j++){
+                
+                while(variables[j] == "unknown"){
+                    
+                    for (let k = 1; k <= unknowns.length; k++){
+                    
+                        if (unknowns[k] == "deltax"){
+                            deltax1 = vavg1/t1;
+                            deltax1 = ((vinit1)*(t1)) + 0.5*((acc1)*Math.pow((t1), 2));
+                            deltax1 = (Math.pow((vfin1), 2) - Math.pow((vinit1, 2))/(2*(acc1)));
+                        }
+                    
+                        if(unknowns[k] == "vavg"){
+                            vavg1 = (deltax1)/t1;
+                            vavg1 = (vfin1+vinit1)/2;
+                        }
+                        
+                        if(unknowns[k] == "t")
+                        {
+                            t1 = (deltax1)/(vavg1);
+                            t1 = (( (vfin1)- (vinit1))/ (a));
+                            t1 = Math.sqrt((2*((deltax1)-((vinit1)*(t1))))/(a1));
+                        }
+
+                        if (unknowns[k] == "acc"){
+                            acc1 = ((vfin1)-(vinit1))/(t1);
+                            acc1 = (2*((deltax1)-((vinit1)*(t))))/Math.pow((t), 2);
+                            acc1 = ((Math.pow( (vfin), 2)) - (Math.pow( (vinit), 2))/(2* (deltax))); 
+                        }
+
+                        if(unknowns[k] == "vfin"){
+                            vfin1 = (2*vavg1) - vinit1;
+                            vfin1 =( vinit1) + ( (acc1) *  (t1));
+                            vfin1 = Math.sqrt((2* (acc1)* (deltax1)) + Math.pow( (vinit1), 2));
+                        }
+
+                        if (unknowns[k] == "vinit"){
+                            vinit1 = (2*vavg1) - vfin1;
+                            vinit1 =  (vfin1) - ((acc1)*(t1));
+                            vinit1 = ( (deltax1)-0.5*((acc1)*Math.pow( (t1), 2)))/(t1);
+                            vinit1 = Math.sqrt(Math.pow((vfin1), 2) - (2*(acc1)*(deltax1)));
+                        }
+                    }
+                }
+            }
+            let output = document.getElementById("output");
+            output.innerHTML = " Delta x: " + deltax1 + " Time: " + t1 + " Initial Velocity: " + vinit1 + " Final Velocity: " + vfin1 + " Acceleration: " + acc1 + " Average Velocity: " + vavg1;
+            /*document.getElementById("vavg").innerHTML = "Delta x" + vavg1;
+            document.getElementById("t").innerHTML = "Time:" + t1;
+            document.getElementById("vinit").innerHTML = vinit1;
+            document.getElementById("vfin").innerHTML = vfin1;
+            document.getElementById("acc").innerHTML = acc1;
+            document.getElementById("deltax").innerHTML = deltax1;*/
+
+        }
+
+
+    </script>
+
+</body>
+
+  
+    </script>
+
+</body>
+
