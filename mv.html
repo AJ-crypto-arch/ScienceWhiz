@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum and Impulse</title>
+</head>
+<body>
+    <h1>Momentum and Impulse Calculator!</h1>
+
+<h2>Momentum<h2>
+    <p>Please leave only one unknown in the boxes below for best preformance.</p>
+<form onsubmit="return false">
+
+    <label for="mass">Mass:</label>
+    <input type="text" id="mass">
+    
+    <label for="velinit"> v<sub>0</sub>:</label>
+    <input type="text" id="velinit">
+    
+    <label for="impulse"> Impulse:</label>
+    <input type="text" id="impulse">
+
+    <label for="velfin">  v<sub>f</sub>:</label>
+    <input type="text" id="velfin">
+    
+    <label for="newtons"> Force:</label>
+    <input type="text" id="newtons">
+
+    <label for="time"> Time:</label>
+    <input type="text" id="time">
+
+    <label for="momentum">  &#8710;p</label>
+    <input type="text" id="momentum">
+    
+
+</form>
+<p id="output"></p>
+
+
+<script type="text/javascript">
+
+    function everything(){
+        let impulse = document.getElementById("impulse").value;
+        let momentum = document.getElementById("momentum").value;
+        let vinit = document.getElementById("velinit").value;
+        let vfin = document.getElementById("velfin").value;
+        let mass = document.getElementById("mass").value;
+        let force = document.getElementById("newtons").value;
+        let time = document.getElementById("time").value;
+        let work = "";
+    
+        if (impulse == "solve"){
+            force = parseFloat(force);
+            time = parseFloat(time);
+            impulse = force*time;
+            work = "We know that impulse is I = Ft. Hence, substituting in values, we get our Impulse to be " + impulse +".";
+            output.innerHTML = "The impulse of the object is " + impulse + "Ns. Work: " + work;
+        }
+
+        if (momentum == "solve"){
+            mass = parseFloat(mass);
+            vfin = parseFloat(vfin);
+            vinit = parseFloat(vinit);
+            momentum = mass*(vfin-vinit);
+            work = "We know that  &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). Plugging in the corresponding values, we get our final output to be " + momentum + ".";
+            output.innerHTML = "The momentum of the object is " + momentum + ". Work: " + work;
+        }
+
+        if (vinit == "solve"){
+            mass = parseFloat(mass);
+            vfin = parseFloat(vfin);
+            momentum = parseFloat(momentum);
+            vinit = ((mass*vfin) + momentum)/mass;
+            work = "We know that  &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). We can then rearrange this equation to isolate v<sub>0</sub>, getting us a final value of " + vinit + ".";
+            output.innerHTML = "The initial velocity of the object is " + vinit + ". Work: " + work;
+        }
+
+        if (vfin == "solve"){
+            mass = parseFloat(mass);
+            vinit = parseFloat(vinit);
+            momentum = parseFloat(momentum);
+            vfin = ((mass*vinit) + momentum)/mass;
+            work = "We know that  &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). We can then rearrange this equation to isolate v<sub>f</sub>, getting us a final value of " + vinit + ".";
+            output.innerHTML = "The final recorded velocity of the object is " + vfin + ". Work: " + work;
+        }
+
+        if (mass == "solve"){
+            vfin = parseFloat(vfin);
+            vinit = parseFloat(vinit);
+            momentum = parseFloat(momentum);
+            mass = momentum/(vfin-vinit);
+            work = "We know that &#8710;p = m(v<sub>f</sub> - v<sub>0</sub>). Rearranging this equation to isolate m, we get our final answer to be " + mass + ".";
+            output.innerHTML = "The mass of the object is " + mass + ". Work: " + work;
+        }
+
+        if (force == "solve"){
+            impulse = parseFloat(impulse);
+            time = parseFloat(time);
+            force = impulse/time;
+            work = "We know that I = Ft. We can rearrange this function to isolate force and simplify to fin the force applied as " + force + ".";
+            output.innerHTML = "The force applied on the object is "+force+"N. Work: "+ work;
+        }
+
+        if (time == "solve"){
+            impulse = parseFloat(impulse);
+            force = parseFloat(force);
+            time = impulse/force;
+            work = "We know that I = Ft. We can rearrange this function to isolate time and simplify to find the time elapsed as " + time + ".";
+            output.innerHTML = "The impact time is "+time+"s. Work: "+work;
+        }
+        
+
+}
+    
+        
+
+    
+</script>
+</body>
+
+
+
+
+</html>
